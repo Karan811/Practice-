@@ -86,4 +86,19 @@ public class StreamsQuestions {
                result.forEach(e->System.out.println(e.getFirstName()));
 
     }
+
+
+    // group strings on its lengths
+
+
+        public static void groupStringsByLength() {
+            List<String> strings = Arrays.asList("apple", "bat", "cat", "dog", "elephant");
+            Map<Integer, List<String>> groupedByLength = strings.stream()
+                    .collect(Collectors.groupingBy(String::length));
+            groupedByLength.forEach((length, strList) -> System.out.println(length + ": " + strList));
+        }
+
+
+
+
 }
